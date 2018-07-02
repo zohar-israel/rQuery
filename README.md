@@ -3,10 +3,24 @@
 A State Orchestration Bridge for react, inspired by jQuery.
 Bridges the gap between siblings, decedent and ancestor components.
 
- Wouldn`t that be awesome!?
+ Wouldn`t it be awesome if yould just write:  
+ 
 ```
 R$("<jQuery style selector>").setState({key: value})
+```    
+
+and  
+
 ```
+R$("<jQuery style selector>").forEachDOMNode(elm => elm.style.backgroundColor = "gold")
+```    
+
+
+Anywhere!
+
+------------
+
+
 ![](https://raw.githubusercontent.com/zohar-israel/rQuery/master/readme.jpg)
 
 ## Usage
