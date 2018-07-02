@@ -3,7 +3,7 @@
 A State Orchestration Bridge for react, inspired by jQuery.
 Bridges the gap between siblings, decedent and ancestor components.
 
- Wouldn`t it be awesome if yould just write:  
+ Wouldn`t it be awesome to just write:  
  
 ```
 R$("<jQuery style selector>").setState({key: value})
