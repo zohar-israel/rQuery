@@ -40,10 +40,11 @@ rQuery also supports using states of external Components in Props
 <span style={{ color: R$("<otherComponentSelector>").state.color }}>
 ```
 ### Registering a Component with rQuery
-For performance optimization, rQuery does not register all the React Components in its internal registry by default, Components that are to be accessed from the exterior should be marked as such.
+For performance optimization, rQuery does not register all the React Components in its internal registry by default, Components that are to be accessed from the exterior should be marked as such.  
+
 ####Registering by inheriting React.$Component
-The simplest way to mark a Component as accessible to rQuery is to inherit it from React.$Component, instead of React.Component.
-The React.$Component simply inherits the original React.Components and overrides the ```componentWillMount``` and ```componentWillUnmount``` methods to handle the registration of the Component with rQuery.
+The simplest way to mark a Component as accessible to rQuery is to inherit it from React.$Component, instead of React.Component.  
+The React.$Component simply inherits the original React.Components and overrides the ```componentWillMount``` and ```componentWillUnmount``` methods to handle the registration of the Component with rQuery.  
 ```
 class Comp extends React.$Component { 
 ```
@@ -57,9 +58,11 @@ If you implement the ```componentWillMount``` and ```componentWillUnmount``` in 
     super.componentWillUnmount();
 	...
   }
-```
+```  
+
 ####Registering from the  ```componentWillMount``` and ```componentWillUnmount``` functions.
-Alternatively, you can register a React Component that extends React.Component directly by registering and unregistering it in the  ```componentWillMount``` and ```componentWillUnmount``` functions.
+Alternatively, you can register a React Component that extends React.Component directly by registering and unregistering it in the  ```componentWillMount``` and ```componentWillUnmount``` functions.  
+
 ```
   componentWillMount() {
     R$.registerComponent(this)
@@ -82,103 +85,129 @@ Assuming the following React Component:
 ```
 <MyComponent id="ComponentID" attribute="value" className="className"/>
 ```
-We can select it using any of the following selectors:
+We can select it using any of the following selectors:  
+
 #####Component type  
 ```
 R$("MyComponent").setState({key: value}) // or any other method
-```
+```  
 
 #####Component ID  
+
 ```
 R$("#ComponentID")...
-```
+```  
 
-#####Attribute values
+#####Attribute values  
+
 ```
 R$('[attribute="value"]')...
-```
+```  
 
-#####Classes
+#####Classes  
+
 ```
 R$('.className')...
-```
+```  
 
-#####Multiple selectors
+#####Multiple selectors  
+
 rQuery supports multiple selectors and always returns a unique array of Components even if a component was matched more than once
 ```
 R$("#ComponentID,.className")...
-```
+```  
+
 ## Methods
 The array of the React Components that matched the selector is enhances with a number of utility methods, which internally iterate over the results and invokes the corresponding function on each of the element.
-Those are shorthands to keep your code readable and are equivalent to using:
+Those are shorthands to keep your code readable and are equivalent to using:  
+
 ```
 R$("App").forEach(e => e.<method to call>);
 ```
 
-### React methods
+### React methods  
 
-The returned array exposes the React Component methods, and just like in jQuery they are executed on every item in the matched array
+The returned array exposes the React Component methods, and just like in jQuery they are executed on every item in the matched array  
 
-#####setState
+#####setState  
+
 ```
 R$("App").setState({ title: "rQuery ... from anywhere" });
 ```
 
 #####forceUpdate  
+
 ```
 R$("App").forceUpdate(); 
 ```  
 
-### Additional methods
+### Additional methods  
 
-#####forEachDOMNode
-Which can be used to alter the underlying dom node corrisponding to each of the matched React Components
+#####forEachDOMNode  
+
+Which can be used to alter the underlying dom node corrisponding to each of the matched React Components  
+
 ```
 R$("selector").forEachDOMNode(elm => elm.style.backgroundColor = "gold") 
-```
-### Shorthand properties
-#####state
-Returns the state of the first matched React Component, useful when targeting a single element  
+```  
+
+### Shorthand properties  
+
+#####state  
+
+Returns the state of the first matched React Component, useful when targeting a single element   
+
 ```
 R$("selector").state
 ```  
 
-#####first
+#####first  
+
 Returns the the first matched React Component, useful when targeting a single element  
+
 ```
 R$("selector").first
-```  
-This is useful when the selector targets a single element and can be used in props as:
+```   
+
+This is useful when the selector targets a single element and can be used in props as:  
+
 ```
 <span style={{ color: R$("<otherComponentSelector>").state.color }}>
 ```  
 
-### Component custom functions
+### Component custom functions  
+
 rQuery allows calling user defined functions within the mached components.
-Assuming a component Comp
+Assuming a component Comp  
+
 ```
 class Comp extends React.$Component {
   customMethod(){
     this.setState({ color: "pink" });
 	...
   }
-```
-You can invoke the internal customMethod:
+```  
+
+You can invoke the internal customMethod:  
+
 ``` 
 // of every match
 R$('Comp').forEach(c=>c.customMethod())
 // or of a single match
 R$('Comp').first.customMethod()
- ```
+ ```  
+ 
 ### Chaining
 
 Again in the jQuery spirit, chaining of methods is supported.
-```
+```  
+
 R$("Notification")  
 	.setState({ read: true })
 	.forEachDOMNode(elm => elm.style.backgroundColor = "grey")
 	.foreceUpdae()
-	```
+	```  
+	
 # Dependencies
 
 * [react](https://www.npmjs.com/package/react "react")
