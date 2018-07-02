@@ -7,6 +7,7 @@ Bridges the gap between siblings, decedent and ancestor components.
 ```
 R$("<jQuery style selector>").setState({key: value})
 ```
+![](https://raw.githubusercontent.com/zohar-israel/rQuery/master/readme.jpg)
 
 ## Usage
 
