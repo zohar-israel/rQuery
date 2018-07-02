@@ -10,15 +10,19 @@ R$("<jQuery style selector>").setState({key: value})
 
 ## Usage
 
-#### Install
+#### Install  
+
 Download rquery.js and add it to your project.
-#### Import
+
+#### Import  
+
 To use rQuery import it by adding the following line to the top of the file, make sure that path points to the location of rquery.js
 
 ```
 import R$ from "./rquery.js";
 ```
-#### Set the state and invoke component functions
+#### Set the state and invoke component functions  
+
 Access the state of a Component using jQuery style syntax and invoke the React Component methods, by using the following code.
 
 ```
@@ -35,14 +39,17 @@ This can be placed within other components, in a user triggered function, in a t
 
 The invoked react methods are executed in the context of the matched components, so you can access the state via setState(), the DOM element, and any function defined in the Component.
 #### Access the Component state values and public properties
+
 rQuery also supports using states of external Components in Props
 ```
 <span style={{ color: R$("<otherComponentSelector>").state.color }}>
 ```
 ### Registering a Component with rQuery
+
 For performance optimization, rQuery does not register all the React Components in its internal registry by default, Components that are to be accessed from the exterior should be marked as such.  
 
-####Registering by inheriting React.$Component
+#### Registering by inheriting React.$Component  
+
 The simplest way to mark a Component as accessible to rQuery is to inherit it from React.$Component, instead of React.Component.  
 The React.$Component simply inherits the original React.Components and overrides the ```componentWillMount``` and ```componentWillUnmount``` methods to handle the registration of the Component with rQuery.  
 ```
@@ -60,7 +67,7 @@ If you implement the ```componentWillMount``` and ```componentWillUnmount``` in 
   }
 ```  
 
-####Registering from the  ```componentWillMount``` and ```componentWillUnmount``` functions.
+#### Registering from the  ```componentWillMount``` and ```componentWillUnmount``` functions.
 Alternatively, you can register a React Component that extends React.Component directly by registering and unregistering it in the  ```componentWillMount``` and ```componentWillUnmount``` functions.  
 
 ```
@@ -87,30 +94,30 @@ Assuming the following React Component:
 ```
 We can select it using any of the following selectors:  
 
-#####Component type  
+##### Component type  
 ```
 R$("MyComponent").setState({key: value}) // or any other method
 ```  
 
-#####Component ID  
+##### Component ID  
 
 ```
 R$("#ComponentID")...
 ```  
 
-#####Attribute values  
+##### Attribute values  
 
 ```
 R$('[attribute="value"]')...
 ```  
 
-#####Classes  
+##### Classes  
 
 ```
 R$('.className')...
 ```  
 
-#####Multiple selectors  
+##### Multiple selectors  
 
 rQuery supports multiple selectors and always returns a unique array of Components even if a component was matched more than once
 ```
@@ -129,13 +136,13 @@ R$("App").forEach(e => e.<method to call>);
 
 The returned array exposes the React Component methods, and just like in jQuery they are executed on every item in the matched array  
 
-#####setState  
+##### setState  
 
 ```
 R$("App").setState({ title: "rQuery ... from anywhere" });
 ```
 
-#####forceUpdate  
+##### forceUpdate  
 
 ```
 R$("App").forceUpdate(); 
@@ -143,7 +150,7 @@ R$("App").forceUpdate();
 
 ### Additional methods  
 
-#####forEachDOMNode  
+##### forEachDOMNode  
 
 Which can be used to alter the underlying dom node corrisponding to each of the matched React Components  
 
@@ -153,7 +160,7 @@ R$("selector").forEachDOMNode(elm => elm.style.backgroundColor = "gold")
 
 ### Shorthand properties  
 
-#####state  
+##### state  
 
 Returns the state of the first matched React Component, useful when targeting a single element   
 
@@ -161,7 +168,7 @@ Returns the state of the first matched React Component, useful when targeting a 
 R$("selector").state
 ```  
 
-#####first  
+##### first  
 
 Returns the the first matched React Component, useful when targeting a single element  
 
