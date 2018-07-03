@@ -26,7 +26,7 @@ Anywhere!
 
 
 ## Demo
-If you rather read code than English, there's a live, editable demo is available at 
+If you rather read code than English, there's a live, editable demo available at 
 <a href="https://codesandbox.io/s/o5kn706vzz">
   CodeSandbox
 </a>
