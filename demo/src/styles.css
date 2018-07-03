@@ -1,0 +1,14 @@
+div {
+  margin: 5px 10px 0 0;
+  width: 500px;
+}
+code {
+  margin-left: 160px;
+  background: #ddd;
+  padding: 3px;
+  display: block;
+}
+button {
+  margin: 5px 10px 0 0;
+  width: 150px;
+}
