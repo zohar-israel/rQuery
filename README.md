@@ -116,7 +116,7 @@ Using this method you can also pass a second variable to R$.registerComponent
 That variable will serve as an additional way to select that component.
 ## Selectors
 
-rQuery returns an array of React Components matched by jQuery styled selector syntax:
+rQuery returns an array of React Components matched by jQuery styled selector syntax.  
 Assuming the following React Component:
 ```
 <MyComponent id="ComponentID" attribute="value" className="className"/>
@@ -236,18 +236,26 @@ R$('Comp').first.customMethod()
 ### Chaining
 
 Again in the jQuery spirit, chaining of methods is supported.
+
 ```  
 
 R$("Notification")  
 	.setState({ read: true })
 	.forEachDOMNode(elm => elm.style.backgroundColor = "grey")
 	.foreceUpdae()
-	```  
+```    
 	
-# Dependencies
+## Dependencies
 
 * [react](https://www.npmjs.com/package/react "react")
 * [react-dom](https://www.npmjs.com/package/react-dom "react-dom")
 * [react-scripts](https://www.npmjs.com/package/react-scripts "react-scripts")
+
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details  
+
 
 
