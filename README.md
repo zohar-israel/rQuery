@@ -41,7 +41,7 @@ If you rather read code than English, there's a live, editable demo is available
 
 #### Install  
 
-Download the file [rquery.js](https://github.com/zohar-israel/rQuery/blob/master/rquery.js "rquery.js") and add it to your project.
+Download the file [rquery.js](https://raw.githubusercontent.com/zohar-israel/rQuery/master/rquery.js "rquery.js") and add it to your project.
 
 #### Import  
 
