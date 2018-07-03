@@ -1,7 +1,11 @@
-# rQuery.js
+# rQuery.js 
 
 A State Orchestration Bridge for react, inspired by jQuery.
 Bridges the gap between siblings, decedent and ancestor components.
+
+
+
+![](https://raw.githubusercontent.com/zohar-israel/rQuery/master/demo/public/readme.jpg)  
 
  Wouldn`t it be awesome to just write:  
  
@@ -21,9 +25,19 @@ Anywhere!
 ------------
 
 
-![](https://raw.githubusercontent.com/zohar-israel/rQuery/master/readme.jpg)
+## Demo
+If you rather read code than English, there's a live, editable demo is available at 
+<a href="https://codesandbox.io/s/o5kn706vzz">
+  CodeSandbox
+</a>
+
+
+[![Edit rQuery](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/o5kn706vzz)
+
 
 ## Usage
+
+
 
 #### Install  
 
