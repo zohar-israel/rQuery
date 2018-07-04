@@ -1,14 +1,21 @@
 div {
   margin: 5px 10px 0 0;
-  width: 500px;
+  padding: 2px;
 }
 code {
   margin-left: 160px;
-  background: #ddd;
+  background: #fff;
   padding: 3px;
   display: block;
 }
 button {
   margin: 5px 10px 0 0;
   width: 150px;
+}
+.App {
+    width: 500px;
+    padding:5px;
+    background: #ddd;
+  border: 1px solid black;
+  margin: auto;
 }

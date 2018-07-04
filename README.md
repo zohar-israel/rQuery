@@ -5,7 +5,7 @@ Bridges the gap between siblings, decedent and ancestor components.
 
 
 
-![](https://raw.githubusercontent.com/zohar-israel/rQuery/master/demo/public/readme.jpg)  
+![](https://raw.githubusercontent.com/zohar-israel/rQuery/master/public/readme.jpg)  
 
  Wouldn`t it be awesome to just write:  
  
@@ -244,7 +244,30 @@ R$("Notification")
 	.forEachDOMNode(elm => elm.style.backgroundColor = "grey")
 	.foreceUpdae()
 ```    
-	
+
+## Demo intallation
+
+There's a live, online, editable demo available at 
+<a href="https://codesandbox.io/s/o5kn706vzz">
+  CodeSandbox
+</a>, however, to install the demo locally:
+
+- Open a command prompt  
+
+- Clone this repository by issuing:  
+```git clone https://github.com/zohar-israel/rQuery.git```  
+
+- Navigate to the created folder:  
+```cd rquery```
+
+- Install dependent libraries:  
+```npm install```
+
+- Start the project:  
+```npm start```  
+
+To see it in action navigate your browser to [http://localhost:3000/](http://localhost:3000/ "http://localhost:3000/")
+
 ## Dependencies
 
 * [react](https://www.npmjs.com/package/react "react")
