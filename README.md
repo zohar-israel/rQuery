@@ -75,7 +75,7 @@ rQuery also supports using states of external Components in Props
 ```
 ### Registering a Component with rQuery
 
-For performance optimization, rQuery does not register all the React Components in its internal registry by default, Components that are to be accessed from the exterior should be marked as such.  
+rQuery does not register all the React Components in its internal registry by default, Components that are to be accessed from the exterior should be marked as such.  
 
 #### Registering by inheriting React.$Component  
 
