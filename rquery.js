@@ -123,4 +123,4 @@ R$.Component = class extends React.Component {
 };
 React.$Component = R$.Component;
 
-module.exports = R$;
+export default R$;
