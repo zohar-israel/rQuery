@@ -242,7 +242,7 @@ Again in the jQuery spirit, chaining of methods is supported.
 R$("Notification")  
 	.setState({ read: true })
 	.forEachDOMNode(elm => elm.style.backgroundColor = "grey")
-	.foreceUpdae()
+	.forceUpdae()
 ```    
 
 ## Demo intallation
